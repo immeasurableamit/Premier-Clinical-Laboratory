@@ -33,18 +33,17 @@ class EmployeePostRequest extends FormRequest
                 ],
                 'phone' => 'required',
                 'site' => 'required',
-                'image' => 'required',
+                'image' => 'sometimes|mimes:jpg,jpeg,png|max:10000',
             ];
         } else {
             return [
                 'name' => 'required',
-                // 'days' => 'required',
                 'email' => [
                     'required',
                     Rule::unique('employees')->ignore(request()->id, 'id')->where('is_delete', 0)
                 ],
                 'phone' => 'required',
-                'image' => 'mimes:png,jpg',
+                'image' => 'sometimes|mimes:jpg,jpeg,png|max:10000',
             ];
         }
     }

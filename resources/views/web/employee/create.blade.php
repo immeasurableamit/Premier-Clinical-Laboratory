@@ -1,5 +1,5 @@
 @extends('web.layout.default')
-@section('Title','add Employee ')
+@section('Title','Create Employee')
 
 
 @section('main')
@@ -8,7 +8,7 @@
         <div class="col-md-12 mb-4">
             <div class="row">
                 <div class="col-6 col-xl-9 mb-4 mb-xl-0">
-                    <h3 class="font-weight-bold">Add  Employee</h3>
+                    <h3 class="font-weight-bold">Create  Employee</h3>
                 </div>
                 <div class="col-6 col-xl-3 mb-4 mb-xl-0">
                      {{-- <a href="{{ route('admin.employess.import.view') }}" class="btn btn-primary pull-right">
