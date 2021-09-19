@@ -1,6 +1,6 @@
 
 @extends('web.layout.default')
-@section('Title','Edit Employee')
+@section('Title','Update Employee')
 
 
 @section('main')
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 grid-margin stretch-card">
+        <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     {!! Form::model($item, [

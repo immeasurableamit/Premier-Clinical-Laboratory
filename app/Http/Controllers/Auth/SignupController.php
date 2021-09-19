@@ -3,17 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use Session;
-use Twilio\Rest\Client;
 use Faker\Provider\Uuid;
 use App\Models\Customers;
+use App\Jobs\CustomerOtpJob;
 use Illuminate\Http\Request;
-use App\Jobs\Passwordsendjob;
+use App\Jobs\EmployeeLoginJob;
 use App\Jobs\SendResetlinkJob;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\SMSController;
-use App\Jobs\CustomerOtpJob;
-use App\Jobs\EmployeeLoginJob;
 
 class SignupController extends Controller
 {
@@ -54,7 +52,7 @@ class SignupController extends Controller
         } else {
 
             $receiverNumber = $phone;
-            $message = "OTP for covis app is " . $emailotp;
+            $message = config('app.name') . ' ' . $emailotp .  " is your verification code. To keep your safe, never forword this code";
 
             $data = [
                 'email' => $request->email,
